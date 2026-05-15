@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.hero-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+}
