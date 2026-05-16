@@ -1,1 +1,66 @@
-<p>subject-list works!</p>
+<h1>Subjects</h1>
+
+<form #subjectForm="ngForm" (ngSubmit)="Submit(subjectForm)">
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input
+      type="text"
+      id="id"
+      name="id"
+      class="form-control"
+      [(ngModel)]="subject.id"
+      required
+    />
+    <label for="code">Code</label>
+    <input
+      type="text"
+      id="code"
+      name="code"
+      class="form-control"
+      [(ngModel)]="subject.code"
+      required
+    />
+    <label for="name">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      [(ngModel)]="subject.name"
+      required
+    />
+    <label for="description">Description</label>
+    <input
+      type="text"
+      id="description"
+      name="description"
+      class="form-control"
+      [(ngModel)]="subject.description"
+      required
+    />
+
+    <label for="department">Department</label>
+    <input
+      type="text"
+      id="department"
+      name="department"
+      class="form-control"
+      [(ngModel)]="subject.department"
+      required
+    />
+
+    <label for="gradeLevel">Grade Level</label>
+    <input
+      type="text"
+      id="gradeLevel"
+      name="gradeLevel"
+      class="form-control"
+      [(ngModel)]="subject.grade"
+      required
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="subjectForm.invalid" (click)="Submit(subjectForm)">
+    Add Subject
+  </button>
+</form>

@@ -1,0 +1,214 @@
+{
+  "students": [
+    {
+      "id": "JgGsgcTnVI0",
+      "name": "awdawd",
+      "age": "awdawd",
+      "grade": "awdawd",
+      "email": "dawda@gmaill.com"
+    },
+    {
+      "id": "1M1KlC7DFcU",
+      "name": "sravan",
+      "age": "awdawd",
+      "grade": "awdawd",
+      "email": "dawda@gmail.com"
+    },
+    {
+      "id": "ZZ7s9KdbNYg",
+      "name": "bcsbcb",
+      "email": "bcjsbb",
+      "age": "bdwbb",
+      "grade": "bbbb"
+    },
+    {
+      "id": "hJg1NZhhVQ8",
+      "name": "hcvhsv",
+      "email": "hvchvhj",
+      "age": "hvdhjv",
+      "grade": "scshcbc"
+    },
+    {
+      "id": "aoNAe8oBcqo",
+      "name": "jbcjsb",
+      "email": "abcd@gmail.com",
+      "age": "2",
+      "grade": "3"
+    },
+    {
+      "id": "N9XlDnRHtCg",
+      "name": "schjbhjcbs",
+      "age": "jcdjcj",
+      "grade": "jnvjdjvnj",
+      "email": "abcd@gmail.com"
+    },
+    {
+      "id": "4qRd1HIj5Vc",
+      "name": "sbchsb",
+      "age": "xsxvs",
+      "grade": "gcvsgcv",
+      "email": "abcd@gmail.com"
+    },
+    {
+      "id": "js9_AfC9Bbc",
+      "name": "cdcd",
+      "email": "abcd@gmail.com",
+      "age": "dcd",
+      "grade": "cdcd"
+    },
+    {
+      "id": "1Pzc_IU8T-U",
+      "name": "hbchbh",
+      "email": "abcd@gmail.com",
+      "age": "hb",
+      "grade": "hbchh"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "qEC_uh6vFs0",
+      "name": "Santhosh",
+      "email": "bciib@gmail.",
+      "experience": "bidihwbw",
+      "subjectCode": "chbdh"
+    },
+    {
+      "id": "ATO_pkJMsGA",
+      "name": "Sravan",
+      "email": "abc@gmail.com",
+      "experience": "deudheuh",
+      "subjectCode": "chbdh"
+    },
+    {
+      "id": "DGUn_5Z37FM",
+      "name": "ddfdf",
+      "email": "abcd@gmail.com",
+      "experience": "deudheuh",
+      "subjectCode": "chbdh"
+    },
+    {
+      "id": "oqE_AC-7TJw",
+      "name": "awdawd",
+      "email": "awdawd",
+      "subject": "awdawda",
+      "experience": "dwawdawd"
+    },
+    {
+      "id": "vMEA1iRkkO0",
+      "name": "wdawd",
+      "email": "awdawda",
+      "subject": "wdawdawd",
+      "experience": "awdawdawd"
+    },
+    {
+      "id": "HoZe5UpZdr0",
+      "name": "wdawd",
+      "email": "awdawda@",
+      "subject": "wdawdawd",
+      "experience": "awdawdawd"
+    },
+    {
+      "id": "lmALvAcxH1c",
+      "name": "wdawd",
+      "email": "awdawda@@",
+      "subject": "wdawdawd",
+      "experience": "awdawdawd"
+    },
+    {
+      "id": "QWffr4g38FM",
+      "name": "dawdaw",
+      "email": "res",
+      "subject": "dawda",
+      "experience": "wdawdawd"
+    },
+    {
+      "id": "UbxjlfpuaVo",
+      "name": "dawdawd",
+      "email": "tetert",
+      "subject": "dadawd",
+      "experience": "awdawdawd"
+    },
+    {
+      "id": "2ljQaE6stik",
+      "name": "dawdaw",
+      "email": "sra",
+      "subject": "wdawdawd",
+      "experience": "awdawdad"
+    },
+    {
+      "id": "095I6RoOlwM",
+      "name": "",
+      "email": "",
+      "experience": ""
+    },
+    {
+      "id": "3VErkQ_D8W8",
+      "name": null,
+      "email": null,
+      "experience": null
+    }
+  ],
+  "class": [
+    {
+      "id": "VKs0J9mQ4Vo",
+      "name": "jcndjnq",
+      "teacher": "ncdjcn"
+    },
+    {
+      "id": "-SkRs3eOBGc",
+      "name": "jcndjnq",
+      "teacher": "ncdjcn"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "7Lze2t0_DN8",
+      "code": "chbdh",
+      "name": "hbxhsbh",
+      "description": "hbchwbh",
+      "department": "hchbhb",
+      "gradeLevel": "hbhbhb"
+    },
+    {
+      "id": "p8xWm2D5hfw",
+      "code": "chbdh",
+      "name": "hbxhsbh",
+      "description": "hbchwbh",
+      "department": "hchbhb",
+      "gradeLevel": "hbhbhb"
+    },
+    {
+      "id": "-G9BzbAWKG8",
+      "code": "dchdbcd",
+      "name": "cdcjndj",
+      "description": "cdcdj",
+      "department": "ncsii",
+      "gradeLevel": "cij"
+    },
+    {
+      "id": "xFL9EfX7J9A",
+      "code": "dchdbcd",
+      "name": "cdcjndj",
+      "description": "cdcdj",
+      "department": "ncsii",
+      "gradeLevel": "cij"
+    },
+    {
+      "id": "i2S8NWfk2uU",
+      "code": "cdjbcjdb",
+      "name": "jhbhcbhbh",
+      "description": "jbhcwbj",
+      "department": "bhb",
+      "gradeLevel": "bchb"
+    },
+    {
+      "id": "3R9sSmktZAk",
+      "code": "cdjbcjdb",
+      "name": "jhbhcbhbh",
+      "description": "jbhcwbj",
+      "department": "bhb",
+      "gradeLevel": "bchb"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

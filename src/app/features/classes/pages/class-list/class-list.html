@@ -1,1 +1,20 @@
-<p>class-list works!</p>
+<h1>Classes</h1>
+
+<form #classForm="ngForm" (ngSubmit)="Submit(classForm)">
+  <div>
+    <label for="id">ID:</label>
+    <input id="id" type="text" name="id" [(ngModel)]="class.id"/>
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" name="name" [(ngModel)]="class.name"/>
+  </div>
+
+  <div>
+    <label for="teacher">Teacher:</label>
+    <input id="teacher" type="text" name="teacher" [(ngModel)]="class.teacher"/>
+  </div>
+
+  <button type="submit" (click)="Submit(classForm)">Submit</button>
+
+</form>

@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Header } from './core/components/header/header';
 import { Footer } from './core/components/footer/footer';
 
@@ -11,4 +11,10 @@ import { Footer } from './core/components/footer/footer';
 })
 export class App {
   protected readonly title = signal('SchoolManagement');
+
+  constructor(public router: Router) {}
+
+  onClickNavigate() {
+    this.router.navigate(['/admin']);
+  }
 }
