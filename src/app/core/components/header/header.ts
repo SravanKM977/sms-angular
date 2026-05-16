@@ -10,7 +10,7 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 export class Header {
   constructor(public router: Router) {}
 
-  OnClickNavigate() {
-    this.router.navigate(['/dashboard']);
+  onClickNavigate(route: string) {
+    this.router.navigate([`/${route}`]);
   }
 }

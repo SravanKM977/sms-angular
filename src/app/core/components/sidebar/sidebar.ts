@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { application } from '../../../../constants/app.constants';
 
 @Component({
@@ -9,6 +9,8 @@ import { application } from '../../../../constants/app.constants';
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  constructor(public router: Router) {}
+
   navItems = [
     {
       name: `${application.paths.dashboard}`,

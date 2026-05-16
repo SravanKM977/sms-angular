@@ -1,1 +1,74 @@
-<p>teacher-list works!</p>
+<h1>Teachers</h1>
+
+  <form #teacherForm="ngForm" (ngSubmit)="SubmitForm(teacherForm)">
+    <ng-container>
+    <div>
+      <label for="id">Id:</label>
+      <input title="id" type="text" name="id" [(ngModel)]="teacher.id" />
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input title="name" type="text" name="name" [(ngModel)]="teacher.name" />
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input title="email" type="text" name="email" [(ngModel)]="teacher.email" />
+    </div>
+    @if(mode === 'update') {
+      <div>
+        <label for="subject">Subject Code:</label>
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          @for(teacher of teachersData$ | async; track teacher.subjectCode) {
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">{{teacher.subjectCode}}</a></li>
+            </ul>
+          }
+        </div>
+      </div>
+    }
+
+    <div>
+      <label for="experience">Experience:</label>
+      <input title="experience" type="text" name="experience" [(ngModel)]="teacher.experience" />
+    </div>
+
+    @if(mode === 'create') {
+      <button type="submit">Add Teacher</button>
+    } @else {
+      <button type="submit">Update Teacher</button>
+    }
+  </ng-container>
+
+  </form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Subject Code</th>
+      <th scope="col">Experience</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (teacher of teachersData$ | async; track teacher.id) {
+    <tr>
+      <th scope="row">{{ teacher.id }}</th>
+      <td>{{ teacher.name }}</td>
+      <td>{{ teacher.email }}</td>
+      <td>{{ teacher.subjectCode }}</td>
+      <td>{{ teacher.experience }}</td>
+      <td>
+        <img src="assets/pencil.png" alt="Edit" (click)="editTeacher(teacher)" />
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
+

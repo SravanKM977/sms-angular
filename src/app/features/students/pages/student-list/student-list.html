@@ -1,1 +1,58 @@
-<p>student-list works!</p>
+<h1>Students</h1>
+<form #studentForm="ngForm" (ngSubmit)="SubmitForm(studentForm)">
+  <div>
+    <label for="id">Id:</label>
+    <input title="id" type="text" name="id" [(ngModel)]="student.id"/>
+  </div>
+    <div>
+      <label for="name">Name:</label>
+      <input title="name" type="text" name="name" [(ngModel)]="student.name"/>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input title="email" type="text" name="email" [(ngModel)]="student.email"/>
+     </div>
+
+    <div>
+      <label for="age">Age:</label>
+      <input title="age" type="text" name="age" [(ngModel)]="student.age"/>
+    </div>
+
+    <div>
+      <label for="grade">Grade:</label>
+      <input title="grade" type="text" name="grade" [(ngModel)]="student.grade"/>
+    </div>
+
+    @if(mode === 'create') {
+        <button type="submit">Add Student</button>
+      } @else {
+        <button type="submit">Update Student</button>
+    }
+
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (student of studentData$ | async; track student.id) {
+    <tr>
+      <th scope="row">{{ student.id }}</th>
+      <td>{{ student.name }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.grade }}</td>
+      <td>
+        <img src="assets/pencil.png" alt="Edit" (click)="EditStudent(student)" />
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>

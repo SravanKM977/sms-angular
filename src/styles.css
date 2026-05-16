@@ -29,3 +29,8 @@ footer {
   bottom: 0;
   start: 0;
 }
+
+img {
+  width: 30px;
+  height: 30px;
+}
