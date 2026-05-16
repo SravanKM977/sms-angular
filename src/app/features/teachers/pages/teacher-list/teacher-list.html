@@ -1,7 +1,7 @@
 <h1>Teachers</h1>
 
-  <form #teacherForm="ngForm" (ngSubmit)="SubmitForm(teacherForm)">
-    <ng-container>
+<form #teacherForm="ngForm" (ngSubmit)="SubmitForm(teacherForm)">
+  <ng-container>
     <div>
       <label for="id">Id:</label>
       <input title="id" type="text" name="id" [(ngModel)]="teacher.id" />
@@ -15,20 +15,26 @@
       <input title="email" type="text" name="email" [(ngModel)]="teacher.email" />
     </div>
     @if(mode === 'update') {
-      <div>
-        <label for="subject">Subject Code:</label>
+    <div>
+      <label for="subject">Subject Code:</label>
 
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          @for(teacher of teachersData$ | async; track teacher.subjectCode) {
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item">{{teacher.subjectCode}}</a></li>
-            </ul>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ teacher.subjectCode || 'Select Subject' }}
+        </button>
+
+        <ul class="dropdown-menu">
+          @for (subject of subjectsData$ | async; track subject.code) {
+          <li>
+            <button type="button" class="dropdown-item" (click)="teacher.subjectCode = subject.code">
+              {{ subject.code }}
+            </button>
+          </li>
           }
-        </div>
+        </ul>
       </div>
+      <input type="hidden" name="subjectCode" [(ngModel)]="teacher.subjectCode" />
+    </div>
     }
 
     <div>
@@ -37,13 +43,13 @@
     </div>
 
     @if(mode === 'create') {
-      <button type="submit">Add Teacher</button>
+    <button type="submit">Add Teacher</button>
     } @else {
-      <button type="submit">Update Teacher</button>
+    <button type="submit">Update Teacher</button>
     }
   </ng-container>
 
-  </form>
+</form>
 
 
 <table class="table">
@@ -68,7 +74,6 @@
         <img src="assets/pencil.png" alt="Edit" (click)="editTeacher(teacher)" />
       </td>
     </tr>
-  }
+    }
   </tbody>
 </table>
-

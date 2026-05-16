@@ -49,11 +49,11 @@
       required
     />
 
-    <label for="gradeLevel">Grade Level</label>
+    <label for="grade">Grade</label>
     <input
       type="text"
-      id="gradeLevel"
-      name="gradeLevel"
+      id="grade"
+      name="grade"
       class="form-control"
       [(ngModel)]="subject.grade"
       required
@@ -64,3 +64,31 @@
     Add Subject
   </button>
 </form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Department</th>
+      <th scope="col">Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (subject of subjectsData$ | async; track subject.id) {
+    <tr>
+      <th scope="row">{{ subject.id }}</th>
+      <td>{{ subject.code }}</td>
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.description }}</td>
+      <td>{{ subject.department }}</td>
+      <td>{{ subject.grade }}</td>
+      <td>
+        <img src="assets/pencil.png" alt="Edit" (click)="editSubject(subject)" />
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>
