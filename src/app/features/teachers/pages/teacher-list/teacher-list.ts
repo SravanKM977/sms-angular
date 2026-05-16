@@ -4,6 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { Teacher } from '../../models/teachers.interface';
 import { AsyncPipe, CommonModule, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
+import { Subject } from '../../../subjects/models/subject.interface';
 
 @Component({
   selector: 'app-teacher-list',
@@ -21,6 +22,7 @@ export class TeacherList {
   };
 
   teachersData$!: Observable<Teacher[]>;
+  subjectsData$!: Observable<Subject[]>;
   mode = 'create';
   constructor(private http: HttpClient) {}
 
@@ -32,9 +34,15 @@ export class TeacherList {
     this.teachersData$ = this.http.get<Teacher[]>('http://localhost:3000/teachers');
   }
 
+  filterSubjectCodes() {
+    this.subjectsData$ = this.http.get<Subject[]>('http://localhost:3000/subjects');
+    console.log(this.subjectsData$.subscribe((data) => console.log(data)));
+  }
+
   editTeacher(teacher: Teacher) {
     this.mode = 'update';
     this.teacher = teacher;
+    this.filterSubjectCodes();
   }
 
   SubmitForm(teacherForm: NgForm) {

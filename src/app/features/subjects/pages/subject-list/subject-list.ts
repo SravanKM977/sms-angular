@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Subject } from '../../models/subject.interface';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-subject-list',
-  imports: [FormsModule],
+  imports: [FormsModule, AsyncPipe],
   templateUrl: './subject-list.html',
   styleUrl: './subject-list.css',
 })
@@ -18,9 +21,21 @@ export class SubjectList {
     grade: '',
   };
 
+  subjectsData$!: Observable<Subject[]>;
+
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loadSubjects();
+  }
+
+  loadSubjects() {
+    this.subjectsData$ = this.http.get<Subject[]>('http://localhost:3000/subjects');
+  }
+
+  editSubject(subject: Subject) {
+    this.subject = subject;
+  }
 
   Submit(subjectForm: NgForm) {
     if (!subjectForm.valid) {
@@ -38,6 +53,16 @@ export class SubjectList {
               .post('http://localhost:3000/subjects', subjectForm.value)
               .subscribe((response) => {
                 console.log(response);
+                this.loadSubjects();
+                this.subject = {
+                  id: '',
+                  code: '',
+                  name: '',
+                  description: '',
+                  department: '',
+                  grade: '',
+                };
+                subjectForm.reset();
               });
           }
         });
